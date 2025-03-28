@@ -13,11 +13,11 @@ PyVista를 이용해 3D로 시각화하며, 사용자가 특정 면을 클릭하
 <table align="left">
   <tr>
     <td align="center">
-      <img src="before.png" width="45%" alt="기본 뷰"/><br>
+      <img src="images/before.png" width="45%" alt="기본 뷰"/><br>
       <sub>기본 뷰</sub>
     </td>
     <td align="center">
-      <img src="after.png" width="45%" alt="하이라이트 뷰"/><br>
+      <img src="images/after.png" width="45%" alt="하이라이트 뷰"/><br>
       <sub>하이라이트 뷰</sub>
     </td>
   </tr>
