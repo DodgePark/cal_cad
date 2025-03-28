@@ -10,11 +10,19 @@ PyVista를 이용해 3D로 시각화하며, 사용자가 특정 면을 클릭하
 
 ## 📷 시각화 예시
 
-- 기본 렌더링  
-  ![기본 뷰](before.png)
+<table align="left">
+  <tr>
+    <td align="center">
+      <img src="before.png" width="45%" alt="기본 뷰"/><br>
+      <sub>기본 뷰</sub>
+    </td>
+    <td align="center">
+      <img src="after.png" width="45%" alt="하이라이트 뷰"/><br>
+      <sub>하이라이트 뷰</sub>
+    </td>
+  </tr>
+</table>
 
-- 면 선택 후 하이라이트  
-  ![하이라이트 뷰](after.png)
 
 
 
@@ -25,7 +33,6 @@ PyVista를 이용해 3D로 시각화하며, 사용자가 특정 면을 클릭하
 
 - STEP 파일 내 개별 Face(면)를 추출하여 STL로 저장
 - PyVista를 통해 3D 렌더링 및 마우스 클릭으로 면 선택/하이라이트
-- Depth Test 해제로 선택된 면을 항상 최상단에 표시
 - 하이라이트 색상 및 스타일 커스터마이징 가능
 
 
@@ -43,7 +50,7 @@ PyVista를 이용해 3D로 시각화하며, 사용자가 특정 면을 클릭하
 
 
 ## 📦 환경 세팅
-
+  
 ### 1. 새 conda 환경 생성
 
 ```bash
@@ -56,22 +63,21 @@ conda activate occenv
 ```bash
 conda install -c conda-forge pythonocc-core pyvista pyvistaqt
 ```
-
-
+  
+  
 
 
 
 ## 🚀 실행 방법
-
+  
 ### 1. STEP 파일 준비
-
-`test.STEP`라는 이름의 STEP 파일을 프로젝트 루트 디렉터리에 위치시킵니다.  
+STEP 파일을 프로젝트 루트 디렉터리에 위치시킵니다.
 (또는 `--step` 옵션으로 다른 파일 경로 지정 가능)
 
 ### 2. Python 파일 실행
 
 ```bash
-python main.py --step test.STEP --out faces_out
+python test.py --step test.STEP --out faces_out
 ```
 
 - `--step`: 변환할 STEP 파일 경로 (기본값: `test.STEP`)  
@@ -79,36 +85,36 @@ python main.py --step test.STEP --out faces_out
 
 ### 3. 3D 시각화 조작법
 
+- **마우스 우클릭: 파란색으로 하이라이트 표시**
 - 마우스 좌클릭 드래그: 회전  
 - 휠 스크롤: 줌 인/아웃  
 - `P` 키: Pick 모드 토글  
-- 클릭한 면: 파란색으로 하이라이트 표시됨
 
-
-
+  
+  
 
 
 ## 🧪 테스트된 환경
-
-- Python 3.10  
+  
+- Python 3.9  
 - Windows 11  
 - PyVista 0.42.0  
 - pythonocc-core 7.6.0  
 
-
-
+  
+  
 
 
 ## 📬 문의
-
+  
 오류나 개선 사항은 GitHub Issues 또는 이메일로 연락해주세요.
 
-
+  
 
 
 
 ## 📝 License & Notice
-
+  
 이 프로젝트는 **기술 평가 및 면접용 과제**로 작성되었으며,  
 **비상업적 목적의 평가 외 사용은 금지**됩니다.
 
