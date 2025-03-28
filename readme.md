@@ -4,7 +4,9 @@
 PyVista를 이용해 3D로 시각화하며, 사용자가 특정 면을 클릭하면  
 해당 면만 하이라이트되도록 하는 Python 기반의 도구입니다.
 
----
+
+
+
 
 ## 📷 시각화 예시
 
@@ -14,7 +16,10 @@ PyVista를 이용해 3D로 시각화하며, 사용자가 특정 면을 클릭하
 - 면 선택 후 하이라이트  
   ![하이라이트 뷰](after.png)
 
----
+
+
+
+
 
 ## 📌 기능 소개
 
@@ -23,7 +28,9 @@ PyVista를 이용해 3D로 시각화하며, 사용자가 특정 면을 클릭하
 - Depth Test 해제로 선택된 면을 항상 최상단에 표시
 - 하이라이트 색상 및 스타일 커스터마이징 가능
 
----
+
+
+
 
 ## ⚙️ 실행 환경
 
@@ -31,7 +38,9 @@ PyVista를 이용해 3D로 시각화하며, 사용자가 특정 면을 클릭하
 - Windows 지원  
 - **Anaconda 가상환경 사용 권장**
 
----
+
+
+
 
 ## 📦 환경 세팅
 
@@ -48,7 +57,9 @@ conda activate occenv
 conda install -c conda-forge pythonocc-core pyvista pyvistaqt
 ```
 
----
+
+
+
 
 ## 🚀 실행 방법
 
@@ -73,7 +84,9 @@ python main.py --step test.STEP --out faces_out
 - `P` 키: Pick 모드 토글  
 - 클릭한 면: 파란색으로 하이라이트 표시됨
 
----
+
+
+
 
 ## 🧪 테스트된 환경
 
@@ -82,13 +95,17 @@ python main.py --step test.STEP --out faces_out
 - PyVista 0.42.0  
 - pythonocc-core 7.6.0  
 
----
+
+
+
 
 ## 📬 문의
 
 오류나 개선 사항은 GitHub Issues 또는 이메일로 연락해주세요.
 
----
+
+
+
 
 ## 📝 License & Notice
 
