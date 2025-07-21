@@ -61,7 +61,8 @@ conda activate occenv
 ### 2. 필수 라이브러리 설치
 
 ```bash
-conda install -c conda-forge pythonocc-core pyvista pyvistaqt
+conda install -c conda-forge pyvista pyvistaqt
+conda install -c conda-forge pythonocc-core=7.7.0
 ```
   
   
