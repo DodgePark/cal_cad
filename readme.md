@@ -61,7 +61,7 @@ conda activate occenv
 ### 2. 필수 라이브러리 설치
 
 ```bash
-conda install -c conda-forge pythonocc-core=7.7.0 pyvista pyvistaqt pillow openpyxl
+conda install -c conda-forge pythonocc-core=7.8.1.1 pyvista pyvistaqt pillow openpyxl
 
 ```
   
@@ -100,7 +100,7 @@ python test.py --step test.STEP --out faces_out
 - Python 3.9  
 - Windows 11  
 - PyVista 0.42.0  
-- pythonocc-core 7.6.0  
+- pythonocc-core 7.8.1.1  
 
   
   
