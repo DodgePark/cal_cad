@@ -41,7 +41,7 @@ PyVista를 이용해 3D로 시각화하며, 사용자가 특정 면을 클릭하
 
 ## ⚙️ 실행 환경
 
-- Python 3.8 이상  
+- Python 3.9 이상  
 - Windows 지원  
 - **Anaconda 가상환경 사용 권장**
 
@@ -84,6 +84,8 @@ python test.py --step test.STEP --out faces_out
 - `--step`: 변환할 STEP 파일 경로 (기본값: `test.STEP`)  
 - `--out`: STL 파일이 저장될 디렉터리명 (기본값: `faces_out`)
 
+
+
 ### 3. 3D 시각화 조작법
 
 - **마우스 우클릭: 파란색으로 하이라이트 표시**
@@ -92,8 +94,48 @@ python test.py --step test.STEP --out faces_out
 - `P` 키: Pick 모드 토글  
 
   
-  
+### 📏 부피 계산 cal_fine.py
+cal_fine.py 는 아래 순서로 가능한 한 정확한 부피를 구합니다.
 
+1. tolerance 내 틈을 자동 봉합(Sewing)
+2. 닫힌 Solid 이 만들어지면 실부피 계산
+3. 실패 시 pitch 해상도로 Voxelize → 근사 부피 산출
+
+
+bounding box (x,y,z 최소 최대로 부피 구하기)
+```bash
+python cal_fine.py --step test.STEP --bbox
+```
+
+기본 측정 (bounding box 버젼보다 정확함)
+```bash
+python cal_fine.py --step test.STEP
+```
+
+단위 변경(mm3, cm3, m3 가능)
+```bash
+python cal_fine.py --step test.STEP --unit cm3
+```
+
+여러 기능 쓰는 예시
+```bash
+python cal_fine.py --step test.STEP --tol 0.05 --pitch 0.5 --unit cm3 --bbox
+```
+
+| 옵션      | 설명                                   | 기본값 |
+|-----------|----------------------------------------|--------|
+| `--step`  | STEP 파일 경로 <br>*(필수)*             | –      |
+| `--tol`   | Sewing 허용 틈&nbsp;(mm)                | `0.05` |
+| `--pitch` | Voxel 격자 간격&nbsp;(mm)               | `0.5`  |
+| `--unit`  | 출력 단위 `mm3 / cm3 / m3`              | `cm3`  |
+| `--bbox`  | Bounding‑Box 부피도 함께 출력           | 꺼짐   |
+| `--show`  | PyVista 로 원본 + Voxel 결과 시각화     | 꺼짐   |
+
+[OK] exact volume = 134.568 cm3
+[Voxel] pitch=0.5 mm → 136.890 cm3  (△ 1.73 %)
+
+--tol 값이 너무 작으면 Solid 생성에 실패할 수 있으니
+0.05 → 0.1 → 0.2 mm 등 단계적으로 조정해 보세요.
 
 ## 🧪 테스트된 환경
   
